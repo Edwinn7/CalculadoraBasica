@@ -1,20 +1,13 @@
-import { ProgressViewIOSComponent, StyleSheet, Text, View } from 'react-native';
-
-export default function Header(){
+import {StyleSheet, Text, View,Image } from 'react-native';
+import { myStyle } from '../assets/styles/MyStyles';
+export default function Header(props){
     return(
         <View style={myStyle.ViewHeader}>
-            <Text>Banner</Text>
+            {/* <Text>Banner</Text> */}
+            <Image
+                source={require(`../assets/images/${props.src}`)}
+                style={{width:'100%', height:'100%'}}
+            />
         </View>
     )
 }
-
-const myStyle = StyleSheet.create({
-    ViewHeader:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor:'gray',
-        // flexDirection:'row',
-        width:'80%',
-    }
-})
